@@ -30,7 +30,7 @@ public class PlayerShoot : MonoBehaviour
     {
         Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePos = new Vector2(this.transform.position.x, this.transform.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(firePos, mousePos - firePos, 100.0f, hitObject);
+        RaycastHit2D hit = Physics2D.Raycast(firePos, mousePos - firePos, 10.0f, hitObject);
         Debug.DrawLine(firePos, (mousePos - firePos) * 100, Color.green);
         if (hit.collider != null)
         {
